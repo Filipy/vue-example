@@ -1,5 +1,7 @@
 import { RouteConfig } from 'vue-router';
-import UserInfoRoutes from './user-info';
+import ClientRoutes from './user-info';
+import UserInfoRoutes from './client';
+
 
 const prefix = '/home';
 const Home = () => import('@/views/Home.vue')
@@ -18,6 +20,7 @@ const routes: RouteConfig[] = [
           import("@/views/About.vue")
       },
       ...UserInfoRoutes,
+      ...ClientRoutes,
     ]
   },
   

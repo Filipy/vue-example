@@ -1,0 +1,48 @@
+
+<div>
+  <div>
+    <b-col lg="3" class="pb-2 pt-2" ><b-button variant="outline-primary" id="show-btn" @click="showModal">Novo Cliente</b-button></b-col>
+  </div>
+  <template>
+    <div>
+      <b-table striped hover :fields= "fields":items="clients">
+        <template v-slot:cell(status)="row">
+          {{status(row.value)}}
+        </template>
+        <template v-slot:cell(Ações)="row">
+          <b-button size="sm" @click="editOpen(row.item)" class="mr-2">
+            Editar
+          </b-button>
+        </template>
+      </b-table>
+    </div>
+  </template>
+
+    <div>
+      <template>
+        <div>      
+          <b-modal ref="my-modal" hide-footer title="Novo Cliente">
+            <b-col md="12"  class="font pr-3" ><p>Código</p></b-col>
+            <b-form-input v-model="clientModel.code" :type="text"></b-form-input>
+
+            <b-col md="12 mt-2"  class="font pr-3" ><p>Nome</p></b-col>
+            <b-form-input v-model="clientModel.name" :type="text"></b-form-input>
+
+            <b-col md="12 mt-2"  class="font pr-3" ><p>Endereço</p></b-col>
+            <b-form-input v-model="clientModel.address" :type="text"></b-form-input>
+
+            <b-col md="12 mt-2"  class="font pr-3" ><p>Telefone</p></b-col>
+            <b-form-input v-model="clientModel.phone":type="text"></b-form-input>
+
+            <b-col md="12 mt-2"  class="font pr-3" ><p>Status</p></b-col>
+            <b-form-select v-model="clientModel.status" :options="options"></b-form-select>
+
+            <b-row>
+              <b-col md="6 mt-2"><b-button class="mt-3 mb-3" variant="outline-success" block @click="save()">Confimar</b-button></b-col> 
+              <b-col md="6 mt-2"><b-button class="mt-3" variant="outline-danger" block @click="hideModal">Cancelar</b-button></b-col> 
+            </b-row>
+          </b-modal>
+        </div>
+      </template>
+    </div>
+</div>
