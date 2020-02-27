@@ -11,7 +11,7 @@
       <form>
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
         <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <router-link to="/home"><input type="button" class="fadeIn fourth" value="Log In"></router-link>
+        <router-link to="/home"><input type="button" class="fadeIn fourth" value="Log In" @click="setAuthToken()"></router-link>
       </form>
   
       <!-- Remind Passowrd -->

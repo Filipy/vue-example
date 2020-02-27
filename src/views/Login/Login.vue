@@ -3,8 +3,20 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component';
+import store from '../../store';
+import Auth from '../../store/modules/Auth/Auth.module';
+import { getModule } from 'vuex-module-decorators';
+
 @Component({})
 export default class Login extends Vue {
+
+
+    public setAuthToken(){
+        debugger
+        this.$store.commit('auth/setAccessToken', 'teste')
+        const myMod = getModule(Auth, this.$store);
+        console.log(myMod.accessToken);
+    }
     
 }
 </script>
