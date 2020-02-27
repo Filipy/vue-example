@@ -12,10 +12,8 @@ export default class Login extends Vue {
 
 
     public setAuthToken(){
-        debugger
         this.$store.commit('auth/setAccessToken', 'teste')
         const myMod = getModule(Auth, this.$store);
-        console.log(myMod.accessToken);
     }
     
 }

@@ -26,13 +26,6 @@ public options: any [] = [
 
     created(){
         this.getAll();
-        setTimeout(() => {
-            debugger;
-            this.getAll();
-            this.getAll();
-            this.getAll();
-            this.getAll();
-        }, 3000);
     }
 
 

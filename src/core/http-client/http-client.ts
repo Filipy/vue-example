@@ -17,7 +17,6 @@ export default class HttpClient {
     params: any = null,
     config: AxiosRequestConfig = this.defaultConfig,
   ): Promise<AxiosResponse<any>> {
-      debugger;
     this.showLoading(loading);
     return axios
       .get(
@@ -96,14 +95,12 @@ export default class HttpClient {
 
   private showLoading = (loading: boolean) => {
     if(loading && (this.loading == undefined || !this.loading.isActive)) {
-        debugger;
         this.loading = vm.$loading.show();
     }
   };
 
   private hideLoading = () => {
     if(this.loading != undefined){
-        debugger;
         this.loading.hide();
     }
   };
