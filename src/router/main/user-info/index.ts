@@ -6,7 +6,7 @@ const UserInfo = () => import('@/views/user-info/UserInfo.vue');
 const routes: RouteConfig[] = [
     {
         path: prefix,
-        component: UserInfo
+        component: UserInfo,
       },
 ]
 

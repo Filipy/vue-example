@@ -9,6 +9,9 @@ const routes: RouteConfig[] = [
     path: `${prefix}`,
     name: "home",
     component: Home,
+    meta: {
+      requiresAuth: true,
+    },
     redirect: `${prefix}/about`,
     children: [
       {
