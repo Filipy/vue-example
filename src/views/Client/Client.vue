@@ -6,6 +6,7 @@ import Component from 'vue-class-component';
 import {ClientModel} from './models/clients.model'
 import axios from 'axios';
 import HttpClient from '@/core/http-client';
+import Notify from '@/core/notify';
 @Component({})
 export default class Client extends Vue {
 private v: any = new Vue();
@@ -13,6 +14,8 @@ private v: any = new Vue();
 public clientModel: ClientModel = new ClientModel();
 
 public httpClient =  HttpClient('client');
+
+public notify = Notify();
 
 public clients:ClientModel [] = [];
 
@@ -80,6 +83,10 @@ public options: any [] = [
         (this.$refs['my-modal'] as any).hide();
       }
 
+    private testin(){
+        debugger;
+        this.notify.success('a');
+    }
 
 }
 </script>

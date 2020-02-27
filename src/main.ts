@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import './plugins/LoadingOverlay/index';
+import './plugins/Snotify/index';
+import './assets/imports';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
