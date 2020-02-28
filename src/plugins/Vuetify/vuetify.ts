@@ -1,11 +1,11 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
 import * as variables from "@/assets/styles/_variables.scss";
-import 'vuetify/dist/vuetify.min.css';
-import '@mdi/font/css/materialdesignicons.css';
+import "vuetify/dist/vuetify.min.css";
+import "@mdi/font/css/materialdesignicons.css";
 
 const vuetify = new Vuetify({
-  iconfont: 'md',
+  iconfont: "md",
   theme: {
     themes: {
       light: {

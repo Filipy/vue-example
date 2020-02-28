@@ -1,30 +1,35 @@
-import { RouteConfig } from 'vue-router';
+import { RouteConfig } from "vue-router";
 
-const prefix = '/home';
-const Home = () => import('@/views/Main.vue')
+const prefix = "/home";
+const Home = () => import(/* webpackChunkName: "home" */ "@/views/Main.vue");
 
-import UserInfoRoutes from './user-info';
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+
+import UserInfoRoutes from "./user-info";
 
 const routes: RouteConfig[] = [
   {
     path: `${prefix}`,
     name: "home",
-    component: Home,
+    components: {
+      header: Header,
+      default: Home,
+      footer: Footer
+    },
     meta: {
-      requiresAuth: true,
+      requiresAuth: true
     },
     redirect: `${prefix}/about`,
     children: [
       {
         path: "about",
         name: "about",
-        component: () =>
-          import("@/views/About.vue")
+        component: () => import("@/views/About.vue")
       },
       ...UserInfoRoutes
     ]
-  },
-  
-]
+  }
+];
 
-export default routes; 
+export default routes;
