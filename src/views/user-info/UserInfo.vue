@@ -9,8 +9,7 @@ import Notify from '@/core/notify';
 export default class UserInfo extends Vue {
  public notify = Notify();   
 
- private testin(){
-    debugger;
+ private success(){
     this.notify.success('a');
  }
 }
