@@ -1,13 +1,20 @@
 import axios from "./instance";
 import { AxiosRequestConfig, AxiosResponse } from "axios";
 import Vue from "vue";
-//import store from '@/plugins/Vuex/store';
-//import ErrorHandler from './../error-handler';
+import store from "@/store";
+import Auth from "@/store/modules/Auth/Auth.module";
+import { getModule } from "vuex-module-decorators";
 const vm: any = new Vue();
 
 export default class HttpClient {
   private loading: any;
-  public constructor(private resource: string) {}
+
+  public constructor(private resource: string) {
+    const myMod = getModule(Auth, vm.$store);
+    axios.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${myMod.accessToken}`;
+  }
 
   public get(
     action: string = "",

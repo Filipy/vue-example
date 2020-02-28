@@ -11,7 +11,7 @@ import { getModule } from "vuex-module-decorators";
 export default class Login extends Vue {
   public setAuthToken() {
     this.$store.commit("auth/setAccessToken", "teste");
-    const myMod = getModule(Auth, this.$store);
+    // const myMod = getModule(Auth, this.$store);
   }
 }
 </script>

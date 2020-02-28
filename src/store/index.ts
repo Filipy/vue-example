@@ -3,6 +3,7 @@ import Vuex, { Payload, Store } from "vuex";
 import Auth from "./modules/Auth/Auth.module";
 import VuexPersist from "vuex-persist";
 import { State } from "./state";
+import { getModule } from "vuex-module-decorators";
 
 Vue.use(Vuex);
 
@@ -12,9 +13,11 @@ const vuexLocalStorage = new VuexPersist({
   reducer: (state: State) => ({ auth: state.auth })
 });
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: {
     auth: Auth
   },
   plugins: [vuexLocalStorage.plugin]
 });
+
+export default store;
