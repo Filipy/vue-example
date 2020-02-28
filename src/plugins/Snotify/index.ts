@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import Snotify, { SnotifyPosition } from 'vue-snotify';
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+import "@/assets/imports.scss";
 
-const options = {
-    toast: {
-        position: SnotifyPosition.rightTop,
-    },
-};
-
-Vue.use(Snotify, options);
+Vue.use(Toast, {
+    position: "top-right",
+    transition: "Vue-Toastification__slideBlurred"
+  });
+  

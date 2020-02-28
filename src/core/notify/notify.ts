@@ -8,16 +8,15 @@ export default class Notify {
   }
 
   public success(message: string){
-      debugger;
-      vm.$snotify.success(message);
+      vm.$toast.success(message);
   }
 
   public warning(message: string){
-      vm.$snotify.warning(message);
+      vm.$toast.warning(message);
   }
 
   public error(message:string){
-      vm.$snotify.error(message);
+      vm.$toast.error(message);
   }
   
 }

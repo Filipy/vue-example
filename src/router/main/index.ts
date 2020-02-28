@@ -1,9 +1,9 @@
 import { RouteConfig } from 'vue-router';
 
-
-
 const prefix = '/home';
-const Home = () => import('@/views/Home.vue')
+const Home = () => import('@/views/Main.vue')
+
+import UserInfoRoutes from './user-info';
 
 const routes: RouteConfig[] = [
   {
@@ -13,6 +13,16 @@ const routes: RouteConfig[] = [
     meta: {
       requiresAuth: true,
     },
+    redirect: `${prefix}/about`,
+    children: [
+      {
+        path: "about",
+        name: "about",
+        component: () =>
+          import("@/views/About.vue")
+      },
+      ...UserInfoRoutes
+    ]
   },
   
 ]

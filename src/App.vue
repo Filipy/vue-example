@@ -1,14 +1,12 @@
 <template>
   <div id="app">
     <router-view />
-    <vue-snotify></vue-snotify>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
-//import './assets/styles/styles.scss';
 
 @Component({
   name: 'app-root',

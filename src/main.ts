@@ -4,15 +4,11 @@ import router from "./router";
 import store from "./store";
 import './plugins/LoadingOverlay/index';
 import './plugins/Snotify/index';
-import './assets/imports';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-import vuetify from '@/plugins/vuetify' // path to vuetify export
+import vuetify from '@/plugins/Vuetify/vuetify' // path to vuetify export
 
 Vue.config.productionTip = false;
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 
 new Vue({
   router,
