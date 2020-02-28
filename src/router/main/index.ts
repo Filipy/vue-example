@@ -1,8 +1,10 @@
-import { RouteConfig } from 'vue-router';
-import ErrorComponent from '../../views/error/Error.vue';
+import { RouteConfig } from "vue-router";
+import ErrorComponent from "../../views/error/Error.vue";
 
-const prefix = '/home';
-const Home = () => import('@/views/Home.vue')
+const prefix = "/home";
+const Home = () => import("@/views/Main.vue");
+
+import UserInfoRoutes from "./user-info";
 
 const routes: RouteConfig[] = [
   {
@@ -10,14 +12,23 @@ const routes: RouteConfig[] = [
     name: "home",
     component: Home,
     meta: {
-      requiresAuth: false,
+      requiresAuth: false
     },
+    redirect: `${prefix}/about`,
+    children: [
+      {
+        path: "about",
+        name: "about",
+        component: () => import("@/views/About.vue")
+      },
+      ...UserInfoRoutes
+    ]
   },
   {
-    path:`/error/`, 
+    path: `/error/`,
     name: "error",
-    component: ErrorComponent, 
-  },
-]
+    component: ErrorComponent
+  }
+];
 
-export default routes; 
+export default routes;
