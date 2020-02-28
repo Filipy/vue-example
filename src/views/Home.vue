@@ -8,7 +8,7 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
   </b-navbar>
-</div>
+  </div>
     <router-view />
   </div>
 </template>
