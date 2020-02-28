@@ -1,43 +1,35 @@
-<v-app>
-    <v-container fluid align-center class="d-flex">
-        <v-layout align-center justify-center row>
-            <v-flex xs12>
-                <v-layout justify-center>
-                    <v-flex md8>
-                        <v-card>
-                            <v-card-text>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <h1 class="my-10" color="error">
-                                            ERRO
-                                        </h1>
-                                    </div>
-                                    <div>
-                                        <hr>
-                                    </div>
-                                    <div>
-                                        <div class="text--primary ma-6">
-                                            Mensagem de erro. lorem ipsum sit dolor amet
-                                        </div>
-                                    </div>
-                                </div>
-                            </v-card-text>
-                            <v-card-actions align-center>
-                                <v-flex md6 class="form-group mb-8">
-                                    <v-btn color="info">
-                                        Página de Inicial
-                                    </v-btn>
-                                </v-flex>
-                                <v-flex md6 class="form-group">
-                                    <v-btn color="info">
-                                        Página de Login
-                                    </v-btn>
-                                </v-flex>
-                            </v-card-actions>
-                        </v-card>
+<v-container class="error-container text-center height-center" fill-height>
+    <v-layout justify-center>
+        <v-flex md10>
+            <v-card>
+                <v-card-text>
+                    <div class="d-flex flex-column">
+                        <div class="mt-4">
+                            <h1 class="display-2 error--text">{{title}}</h1>
+                        </div>
+                        <div class="my-4">
+                            <h1 class="display-1 gray--text">{{errorCode}}</h1>
+                        </div>
+                        <div>
+                            <v-divider color="error"></v-divider>
+                        </div>
+                        <div class="my-6">
+                            <div class="text--primary ma-6">
+                                {{message}}
+                            </div>
+                        </div>
+                    </div>
+                </v-card-text>
+                <v-card-actions align-center>
+                    <v-flex md12 class="form-group">
+                        <div class="my-6">
+                            <v-btn to="/home" color="error">Voltar</v-btn>
+                        </div>
                     </v-flex>
-                </v-layout>
-            </v-flex>
-        </v-layout>
-    </v-container>
-</v-app>
+                </v-card-actions>
+            </v-card>
+        </v-flex>
+    </v-layout>
+
+</v-container>
+
