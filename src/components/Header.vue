@@ -21,7 +21,7 @@
     <v-app-bar app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">API - E-Commerce SESC</span>
+        <span class="title">API</span>
       </v-toolbar-title>
       <v-spacer />
       <v-menu
