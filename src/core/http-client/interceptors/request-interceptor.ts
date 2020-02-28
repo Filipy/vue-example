@@ -1,10 +1,10 @@
-import axios from '../instance';
+import axios from "../instance";
 
 axios.interceptors.request.use(
-  (config) => {
+  config => {
     return config;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
-  },
+  }
 );

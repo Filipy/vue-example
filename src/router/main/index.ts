@@ -1,8 +1,10 @@
 import { RouteConfig } from "vue-router";
-import ErrorComponent from "../../views/error/Error.vue";
 
 const prefix = "/home";
-const Home = () => import("@/views/Main.vue");
+const Home = () => import(/* webpackChunkName: "home" */ "@/views/Main.vue");
+
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 
 import UserInfoRoutes from "./user-info";
 
@@ -10,9 +12,13 @@ const routes: RouteConfig[] = [
   {
     path: `${prefix}`,
     name: "home",
-    component: Home,
+    components: {
+      header: Header,
+      default: Home,
+      footer: Footer
+    },
     meta: {
-      requiresAuth: false
+      requiresAuth: true
     },
     redirect: `${prefix}/about`,
     children: [
@@ -23,11 +29,6 @@ const routes: RouteConfig[] = [
       },
       ...UserInfoRoutes
     ]
-  },
-  {
-    path: `/error/`,
-    name: "error",
-    component: ErrorComponent
   }
 ];
 

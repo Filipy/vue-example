@@ -1,7 +1,5 @@
 export class AuthState {
-    public accessToken: string = '';
-    public userName: string = '';
-    public permissions: string[] = [];
-    
-
+  public accessToken: string = "";
+  public userName: string = "";
+  public permissions: string[] = [];
 }
