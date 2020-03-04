@@ -1,4 +1,3 @@
-import Router from "vue-router";
 import store from "@/store";
 import { getModule } from "vuex-module-decorators";
 import Auth from "@/store/modules/Auth/Auth.module";

@@ -1,23 +1,118 @@
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-  
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <i class="fas fa-users" style="font-size:40px ;"></i>
-      </div>
-  
-      <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <router-link to="/home"><input type="button" class="fadeIn fourth" value="Log In" @click="setAuthToken()"></router-link>
-      </form>
-  
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-      </div>
-  
-    </div>
-  </div>
+  <v-container class="text-center" style="padding: 0 !important">
+    <v-layout class="mx-auto mx-10">
+
+      <v-flex md12>
+        <v-flex xs12 sm12 md12 class="fadeIn first">
+          <div class="mb-3">
+            <v-img class="mx-auto" src="https://www.sescpr.com.br/wp-content/themes/_s3/media/svg/logo-sesc.svg"
+              width="100px">
+            </v-img>
+          </div>
+        </v-flex>
+
+        <v-divider></v-divider>
+
+        <v-flex xs5 sm5 md5 class="mx-auto">
+          <v-flex xs12 sm12 md12 class="fadeIn first">
+            <div class="py-3">
+              <span class="font-weight-black">Para continuar, faça login no CNH.</span>
+            </div>
+          </v-flex>
+
+          <v-flex xs12 sm12 md12 class="fadeIn first">
+            <router-link to="/home" class="pa-2 px-6 width-full">
+              <v-btn color="#BFBFBF" class="elevation-5 width-full" outlined @click="setAuthToken()">
+                <span class="error--text">
+                  <v-icon class="pr-1">mdi-google-plus-box</v-icon>Continuar com Google
+                </span>
+              </v-btn>
+            </router-link>
+          </v-flex>
+
+          <v-flex xs12 sm12 md12 class="fadeIn first">
+            <router-link to="/home" class="pa-2 px-6 width-full">
+              <v-btn color="#BFBFBF" class="elevation-5 width-full" outlined @click="setAuthToken()">
+                <span class="primary--text">
+                  <v-icon class="pr-1">mdi-facebook-box</v-icon>Continuar com Facebook
+                </span>
+              </v-btn>
+            </router-link>
+          </v-flex>
+
+          <v-flex xs12 sm12 m12>
+            <v-row>
+              <v-col cols="12">
+                <v-row :align="center" :justify="center">
+                  <div style="width: 45%;">
+                    <v-divider class="my-3"></v-divider>
+                  </div>
+                  <div style="width: 10%;">
+                    ou
+                  </div>
+                  <div style="width: 45%;">
+                    <v-divider class="my-3"></v-divider>
+                  </div>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-flex>
+
+          <v-flex xs12 sm12 md12 class="fadeIn second">
+            <v-text-field id="login" name="login" label="Login"></v-text-field>
+          </v-flex>
+
+          <v-flex xs12 sm12 md12 class="fadeIn second">
+            <v-text-field id="password" name="senha" label="Senha" :type="showPassword ? 'text' : 'password'"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'" @click:append="showPassword = !showPassword">
+            </v-text-field>
+          </v-flex>
+
+          <v-flex md12 class="fadeIn second">
+            <div class="mb-3">
+              <v-checkbox v-model="remenderMe" label="Lembrar de mim" color="primary"></v-checkbox>
+              <router-link to="/home" class="px-6 width-full">
+                <v-btn class="primary elevation-5 width-full" @click="setAuthToken()">
+                  <span>Entrar</span>
+                </v-btn>
+              </router-link>
+            </div>
+            <router-link to="/home">
+              <span>Esqueceu sua Senha?</span>
+            </router-link>
+          </v-flex>
+
+          <v-divider class="my-3"></v-divider>
+
+          <v-flex xs12 sm12 md12 class="fadeIn third">
+            <div class="py-3">
+              <span class="font-weight-black">Não tem uma conta?</span>
+            </div>
+          </v-flex>
+
+          <v-flex md12 class="fadeIn third">
+            <div class="mb-3">
+              <router-link to="/home" class="px-6 width-full">
+                <v-btn color="primary" class="elevation-5 width-full" @click="setAuthToken()" outlined>
+                  <span>Inscrever-se no CNH</span>
+                </v-btn>
+              </router-link>
+            </div>
+          </v-flex>
+        </v-flex>
+
+        <v-divider class="my-3"></v-divider>
+
+        <v-flex md12 class="fadeIn third">
+          <span class="overline">Se clicar em "Entrar com o Facebook" ou "Entrar com o Google" e não for usuário do CNH,
+            você será cadastrado e
+            estará aceitando os <span class="success--text">Termos e condições</span> e a <span
+              class="success--text">Política de
+              privacidade</span> do CNH.
+          </span>
+        </v-flex>
+      </v-flex>
+    </v-layout>
+
+  </v-container>
+</div>

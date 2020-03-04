@@ -1,10 +1,10 @@
-$primary: #009540;
-$secondary: #3f51b5;
+$primary: #004C99;
+$secondary: #f6be00;
 $accent: #673ab7;
-$error: #f44336;
-$warning: #ff5722;
+$error: #FF5252;
+$warning: #FB8C00;
 $info: #2196f3;
-$success: #4caf50;
+$success: #4CAF50;
 
 :export {
   primary: $primary;
@@ -13,6 +13,5 @@ $success: #4caf50;
   error: $error;
   warning: $warning;
   info: $info;
-  success: $success
+  success: $success;
 }
-

@@ -9,9 +9,11 @@ import { getModule } from "vuex-module-decorators";
 
 @Component({})
 export default class Login extends Vue {
+  public remenderMe = true;
+  public showPassword = true;
   public setAuthToken() {
-    this.$store.commit("auth/setAccessToken", "teste");
-    // const myMod = getModule(Auth, this.$store);
+    const myMod = getModule(Auth, this.$store);
+    myMod.setAccessToken("teste");
   }
 }
 </script>

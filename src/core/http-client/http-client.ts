@@ -4,7 +4,7 @@ import Vue from "vue";
 import store from "@/store";
 import Auth from "@/store/modules/Auth/Auth.module";
 import { getModule } from "vuex-module-decorators";
-const vm: any = new Vue();
+const vm: any = new Vue({ store: store });
 
 export default class HttpClient {
   private loading: any;

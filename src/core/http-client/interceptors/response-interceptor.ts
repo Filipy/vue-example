@@ -1,7 +1,11 @@
+import { getModule } from "vuex-module-decorators";
 import axios from "../instance";
 import Vue from "vue";
-//import store from '@/plugins/Vuex/store';
-const vm: any = new Vue();
+import store from "@/store";
+import Auth from "@/store/modules/Auth/Auth.module";
+const vm: any = new Vue({ store: store });
+
+const auth = getModule(Auth, vm.store);
 
 axios.interceptors.response.use(
   response => {
@@ -12,7 +16,7 @@ axios.interceptors.response.use(
       error.response &&
       (error.response.status === 401 || error.response.status === 403)
     ) {
-      //store.dispatch('unauthorized');
+      auth.logout();
     } else {
       handleErrorResponse(error);
     }
